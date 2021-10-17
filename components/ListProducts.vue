@@ -34,7 +34,7 @@ export default class ListProducts extends Vue {
 }
 </script>
 
-<style>
+<style lang="less">
 * {
   padding: 0;
   margin: 0;
@@ -43,11 +43,11 @@ export default class ListProducts extends Vue {
 
 .container {
   width: 100%;
-}
 
-.wide {
-  width: 1080px;
-  margin: 0 auto;
+  &.wide {
+    width: 1080px;
+    margin: 0 auto;
+  }
 }
 
 .row {

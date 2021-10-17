@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="col-3 product" :to="'/products/' + product.id">
+  <nuxt-link class="col-3 product-item" :to="'/products/' + product.id">
     <div class="product__img">
       <img
         class="container"
@@ -29,31 +29,27 @@ export default class ProductItem extends Vue {
 }
 </script>
 
-<style>
+<style lang="less">
 .col-3 {
   width: 25%;
-  padding: 8px 8px;
+  padding: 8px;
 }
 
-.name {
-  padding-bottom: 10px;
-  font-size: 30px;
-}
+.product-item {
+  padding: 8px;
+  text-decoration: none;
+  color: #000;
 
-.price {
-  padding: 8px 0;
-  color: #a0122b;
-  font-size: 26px;
-  font-weight: bold;
-}
+  .name {
+    padding-bottom: 10px;
+    font-size: 30px;
+  }
 
-.status {
-  padding: 8px 0;
-  font-size: 16px;
-}
-
-.view-count {
-  padding: 8px 0;
-  font-size: 16px;
+  .price {
+    padding: 8px 0;
+    color: #a0122b;
+    font-size: 26px;
+    font-weight: bold;
+  }
 }
 </style>

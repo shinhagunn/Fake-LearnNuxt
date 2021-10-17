@@ -9,7 +9,7 @@
             alt="anh"
           />
         </div>
-        <div class="col-6">
+        <div class="col-6 product-info">
           <p class="name">{{ product.name }}</p>
           <p class="price">{{ changeCurrency(product.price) }}</p>
           <p v-if="product.stock_left > 0" class="status">
@@ -63,19 +63,20 @@ export default class ProductItem extends Vue {
 }
 </script>
 
-<style>
+<style lang="less">
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 .container {
   width: 100%;
-}
-
-.container.wide {
-  width: 1080px;
-  margin: 0 auto;
+  
+  &.wide {
+    width: 1080px;
+    margin: 0 auto;
+  }
 }
 
 .row {
@@ -83,33 +84,33 @@ export default class ProductItem extends Vue {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  
+  .col-6 {
+    width: 50%;
+    padding: 8px 8px;
+  }
 }
 
-.col-6 {
-  width: 50%;
-  padding: 8px 8px;
-}
-
-.name {
-  padding-bottom: 10px;
-  font-size: 30px;
-}
-
-.price {
-  padding: 8px 0;
-  color: #a0122b;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-.status {
-  padding: 8px 0;
+.product-info{
   font-size: 16px;
-}
+  .name {
+    padding-bottom: 10px;
+    font-size: 30px;
+  }
 
-.view-count {
-  padding: 8px 0;
-  font-size: 16px;
+  .price {
+    color: #a0122b;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .status {
+    padding: 8px 0;
+  }
+
+  .view-count {
+    padding: 8px 0;
+  }
 }
 
 button {
